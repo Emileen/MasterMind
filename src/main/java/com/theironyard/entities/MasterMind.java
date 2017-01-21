@@ -15,6 +15,7 @@ public class MasterMind {
     @GeneratedValue
     int round;
 
+
     @Column(nullable = false)
     public
     int []  guesses;

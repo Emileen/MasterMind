@@ -3,6 +3,9 @@ package com.theironyard.controllers;
 import com.theironyard.entities.MasterMind;
 import com.theironyard.services.MasterMindRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
@@ -14,6 +17,19 @@ import javax.annotation.PostConstruct;
 public class MasterMindController {
     @Autowired
     MasterMindRepository games;
+
+
+    // sending data back
+    @RequestMapping(path ="/", method = RequestMethod.GET)
+    public String homePage(){
+        return "home";
+    }
+
+    //pulling data back
+  /*  @RequestMapping(path = "/", method = RequestMethod.POST)
+    public String game(){
+        return "home";
+    }*/
 
 
 
@@ -41,9 +57,5 @@ public class MasterMindController {
     public static int randomNum (){
         return (int )(Math.random() * 8 + 1);
     }
-
-
-
-
 
 }
